@@ -1,0 +1,3 @@
+[
+  { "pattern": "rm -rf /", "description": "Attempted destruction of the root directory", "severity": "critical" }
+]
