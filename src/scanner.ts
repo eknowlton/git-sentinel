@@ -1,6 +1,10 @@
 import fs from 'fs';
 import path from 'path';
 import chalk from 'chalk';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const BIDI_CHARS = /[\u202A-\u202E\u2066-\u2069]/;
 
@@ -33,7 +37,7 @@ export class Scanner {
   }
 
   private async loadRules(): Promise<void> {
-    const defaultRulesPath = path.join(process.cwd(), 'data/rules');
+    const defaultRulesPath = path.join(__dirname, '../data/rules');
     const searchPaths = [defaultRulesPath];
     if (this.rulesDir) searchPaths.push(path.resolve(this.rulesDir));
 
@@ -100,7 +104,7 @@ export class Scanner {
         });
       }
 
-      lines.forEach((line, index) => {
+      lines.forEach((line: string, index: number) => {
         if (line.length > 1000) {
           this.findings.push({
             file: path.relative(this.repoPath, filePath),

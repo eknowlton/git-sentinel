@@ -2,6 +2,10 @@ import Docker from 'dockerode';
 import path from 'path';
 import fs from 'fs';
 import { spawn } from 'child_process';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const IMAGE_NAME = 'git-sentinel-sandbox';
 
@@ -16,13 +20,13 @@ export class Sandbox {
    * Builds the sandbox image if it doesn't exist.
    */
   async buildImage(): Promise<void> {
-    const images = await this.docker.listImages();
+    const images = (await this.docker.listImages()) as any[];
     if (images.some(img => img.RepoTags?.includes(`${IMAGE_NAME}:latest`))) {
       return;
     }
 
     console.log('Building sandbox image...');
-    const dockerfilePath = path.join(process.cwd(), 'data/sandbox/Dockerfile');
+    const dockerfilePath = path.join(__dirname, '../data/sandbox/Dockerfile');
     const contextDir = path.dirname(dockerfilePath);
 
     return new Promise((resolve, reject) => {

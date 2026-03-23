@@ -40,19 +40,13 @@ Git Sentinel is a powerful security scanner designed to analyze Git repositories
 
 ## Usage
 
-You can run Git Sentinel directly using `ts-node` or by building and running with `node`.
+The easiest way to run Git Sentinel is with `npx`:
 
-### Scanning a Repository
-
-Scan a local directory:
 ```bash
-npm start -- scan /path/to/local/repo
+npx @01a/git-sentinel scan <url-or-path> [options]
 ```
 
-Scan a remote repository:
-```bash
-npm start -- scan https://github.com/malicious/repo.git
-```
+Or you can run it directly using `npm start` after cloning the repository.
 
 ### Options
 

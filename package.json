@@ -1,8 +1,17 @@
 {
-  "name": "git-sentinel",
-  "version": "1.0.0",
+  "name": "@01a/git-sentinel",
+  "version": "1.1.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "bin": {
+    "git-sentinel": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "data/rules",
+    "data/sandbox",
+    "custom-rules"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node --loader ts-node/esm src/index.ts",
