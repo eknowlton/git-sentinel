@@ -1,6 +1,11 @@
 # Git Sentinel
 
-Git Sentinel is a powerful security scanner designed to analyze Git repositories for malicious code patterns, BiDi (bidirectional) attacks, and obfuscated malware. It helps developers and security researchers safely inspect untrusted repositories before running scripts or including them in their projects.
+[![npm version](https://img.shields.io/npm/v/@01a/git-sentinel.svg)](https://www.npmjs.com/package/@01a/git-sentinel)
+[![npm downloads](https://img.shields.io/npm/dm/@01a/git-sentinel.svg)](https://www.npmjs.com/package/@01a/git-sentinel)
+[![license](https://img.shields.io/npm/l/@01a/git-sentinel.svg)](https://www.npmjs.com/package/@01a/git-sentinel)
+
+Git Sentinel is a powerful security scanner designed to analyze Git repositories for malicious code patterns, BiDi (bidirectional) attacks, and obfuscated malware.
+ It helps developers and security researchers safely inspect untrusted repositories before running scripts or including them in their projects.
 
 ## Features
 
@@ -47,6 +52,14 @@ npx @01a/git-sentinel scan <url-or-path> [options]
 ```
 
 Or you can run it directly using `npm start` after cloning the repository.
+
+### Self-Scanning Example
+
+You can try scanning this repository itself to see Git Sentinel in action:
+
+```bash
+npx @01a/git-sentinel scan https://github.com/01a/git-sentinel
+```
 
 ### Options
 
