@@ -58,7 +58,7 @@ Or you can run it directly using `npm start` after cloning the repository.
 You can try scanning this repository itself to see Git Sentinel in action:
 
 ```bash
-npx @01a/git-sentinel scan https://github.com/01a/git-sentinel
+npx @01a/git-sentinel scan git@github.com:eknowlton/git-sentinel.git
 ```
 
 ### Options
