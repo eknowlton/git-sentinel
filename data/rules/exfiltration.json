@@ -1,0 +1,188 @@
+[
+  {
+    "pattern": "requests\\.(get|post|put|patch|delete|request)\\(",
+    "description": "Python: Potential data exfiltration via 'requests' library",
+    "severity": "medium",
+    "fileTypes": [".py"]
+  },
+  {
+    "pattern": "urllib\\.request\\.urlopen\\(",
+    "description": "Python: Potential data exfiltration via 'urllib'",
+    "severity": "medium",
+    "fileTypes": [".py"]
+  },
+  {
+    "pattern": "http\\.client\\.(HTTPConnection|HTTPSConnection)\\(",
+    "description": "Python: Potential data exfiltration via 'http.client'",
+    "severity": "medium",
+    "fileTypes": [".py"]
+  },
+  {
+    "pattern": "smtplib\\.SMTP\\(",
+    "description": "Python: Potential data exfiltration via SMTP (email)",
+    "severity": "medium",
+    "fileTypes": [".py"]
+  },
+  {
+    "pattern": "socket\\.(socket|create_connection)\\(",
+    "description": "Python: Low-level socket communication (potential exfiltration)",
+    "severity": "low",
+    "fileTypes": [".py"]
+  },
+  {
+    "pattern": "fetch\\s*\\(",
+    "description": "JavaScript/Node.js: Potential data exfiltration via 'fetch'",
+    "severity": "medium",
+    "fileTypes": [".js", ".ts"]
+  },
+  {
+    "pattern": "axios\\.(get|post|put|patch|delete|request)\\(",
+    "description": "JavaScript/Node.js: Potential data exfiltration via 'axios'",
+    "severity": "medium",
+    "fileTypes": [".js", ".ts"]
+  },
+  {
+    "pattern": "http\\.request\\(",
+    "description": "Node.js: Potential data exfiltration via 'http.request'",
+    "severity": "medium",
+    "fileTypes": [".js", ".ts"]
+  },
+  {
+    "pattern": "https\\.request\\(",
+    "description": "Node.js: Potential data exfiltration via 'https.request'",
+    "severity": "medium",
+    "fileTypes": [".js", ".ts"]
+  },
+  {
+    "pattern": "net\\.connect\\(",
+    "description": "Node.js: Low-level socket connection (potential exfiltration)",
+    "severity": "low",
+    "fileTypes": [".js", ".ts"]
+  },
+  {
+    "pattern": "require\\(['\"](http|https|net|tls)['\"]\\)",
+    "description": "Node.js: Loading networking modules (potential exfiltration)",
+    "severity": "low",
+    "fileTypes": [".js", ".ts"]
+  },
+  {
+    "pattern": "XMLHttpRequest\\(",
+    "description": "JavaScript: Potential data exfiltration via XMLHttpRequest",
+    "severity": "medium",
+    "fileTypes": [".js", ".ts"]
+  },
+  {
+    "pattern": "curl\\s+.*(-F|--form|-d|--data|--data-binary|--data-raw|--data-urlencode)",
+    "description": "Shell: curl sending data via POST/Form",
+    "severity": "high",
+    "fileTypes": [".sh", ".bash"]
+  },
+  {
+    "pattern": "wget\\s+.*(--post-data|--post-file)",
+    "description": "Shell: wget sending data via POST",
+    "severity": "high",
+    "fileTypes": [".sh", ".bash"]
+  },
+  {
+    "pattern": "nc\\s+.*<\\s+/etc/passwd",
+    "description": "Shell: Attempting to exfiltrate /etc/passwd via netcat",
+    "severity": "high",
+    "fileTypes": [".sh", ".bash"]
+  },
+  {
+    "pattern": "nc\\s+.*>\\s+/dev/tcp/",
+    "description": "Shell: Data exfiltration via /dev/tcp device",
+    "severity": "high",
+    "fileTypes": [".sh", ".bash"]
+  },
+  {
+    "pattern": "cat\\s+.*>\\s+/dev/(tcp|udp)/",
+    "description": "Shell: Data exfiltration via /dev/tcp or /dev/udp redirection",
+    "severity": "high",
+    "fileTypes": [".sh", ".bash"]
+  },
+  {
+    "pattern": "curl_exec\\s*\\(",
+    "description": "PHP: Potential data exfiltration via curl_exec",
+    "severity": "medium",
+    "fileTypes": [".php"]
+  },
+  {
+    "pattern": "file_get_contents\\s*\\(\\s*['\"]http",
+    "description": "PHP: Potential data exfiltration/external request via file_get_contents",
+    "severity": "medium",
+    "fileTypes": [".php"]
+  },
+  {
+    "pattern": "Net::HTTP\\.(get|post|start)",
+    "description": "Ruby: Potential data exfiltration via Net::HTTP",
+    "severity": "medium",
+    "fileTypes": [".rb"]
+  },
+  {
+    "pattern": "open\\s*\\(\\s*['\"]http",
+    "description": "Ruby: Potential external request via open-uri",
+    "severity": "medium",
+    "fileTypes": [".rb"]
+  },
+  {
+    "pattern": "http\\.(Get|Post|Head|Do|PostForm)\\(",
+    "description": "Go: Potential data exfiltration via net/http",
+    "severity": "medium",
+    "fileTypes": [".go"]
+  },
+  {
+    "pattern": "HttpURLConnection\\s+",
+    "description": "Java: Potential data exfiltration via HttpURLConnection",
+    "severity": "medium",
+    "fileTypes": [".java"]
+  },
+  {
+    "pattern": "HttpClient\\.newBuilder\\(",
+    "description": "Java: Potential data exfiltration via HttpClient",
+    "severity": "medium",
+    "fileTypes": [".java"]
+  },
+  {
+    "pattern": "ssh\\s+.*@.*['\"]cat\\s+",
+    "description": "Shell: Potential data exfiltration via SSH command execution",
+    "severity": "medium",
+    "fileTypes": [".sh", ".bash"]
+  },
+  {
+    "pattern": "scp\\s+.*\\s+.*@.*:",
+    "description": "Shell: Potential data exfiltration via scp",
+    "severity": "medium",
+    "fileTypes": [".sh", ".bash"]
+  },
+  {
+    "pattern": "rsync\\s+.*\\s+.*@.*:",
+    "description": "Shell: Potential data exfiltration via rsync",
+    "severity": "medium",
+    "fileTypes": [".sh", ".bash"]
+  },
+  {
+    "pattern": "ftp\\s+-n",
+    "description": "Shell: Potential non-interactive FTP (automated exfiltration)",
+    "severity": "medium",
+    "fileTypes": [".sh", ".bash"]
+  },
+  {
+    "pattern": "socket\\s*\\(\\s*AF_INET",
+    "description": "C/C++: Network socket creation",
+    "severity": "low",
+    "fileTypes": [".c", ".cpp", ".h"]
+  },
+  {
+    "pattern": "connect\\s*\\(",
+    "description": "C/C++: Network connection attempt",
+    "severity": "low",
+    "fileTypes": [".c", ".cpp", ".h"]
+  },
+  {
+    "pattern": "send\\s*\\(",
+    "description": "C/C++: Data transmission over network",
+    "severity": "low",
+    "fileTypes": [".c", ".cpp", ".h"]
+  }
+]

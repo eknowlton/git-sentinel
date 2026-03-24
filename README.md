@@ -107,6 +107,17 @@ The sandbox uses Docker to create an isolated environment with the following con
 - **Non-Privileged User**: Scripts run as a restricted `sentinel` user.
 - **Base Image**: Uses a lightweight Alpine Linux image with `bash`, `python3`, and `coreutils` pre-installed.
 
+## Disclaimer and Limitation of Liability
+
+**Git Sentinel is provided "as is", without warranty of any kind, express or implied.** 
+
+The authors and contributors of this project:
+- **Do not guarantee** the detection of all malicious patterns or security threats.
+- **Are not responsible** for any damage to your system, data loss, or security breaches that may occur while using this tool or as a result of relying on its findings.
+- **Do not endorse** or guarantee the safety of any repository scanned by this tool, even if no issues are found.
+
+Security scanning is an inherently complex task. This tool should be used as part of a broader security strategy and not as a sole source of truth. **Use at your own risk.**
+
 ## License
 
 ISC License. See `package.json` for details.
